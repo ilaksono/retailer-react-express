@@ -13,35 +13,39 @@ export const images = [
     id: 0,
     title: 'Toy 1',
     priceCents: '99',
-    width
+    width,
+    cat: 'lion'
   },
   {
     url: '/items/2.jpeg',
     id: 1,
     title: 'Toy 2',
     priceCents: '199',
-    width
+    width,
+    cat: 'tiger'
   },
   {
     url: '/items/3.jpeg',
     title: 'Toy 3',
     id: 2,
     priceCents: '299',
-    width
+    width,
+    cat: 'lion'
   },
   {
     url: '/items/4.jpeg',
     title: 'Toy 4',
     id: 3,
     priceCents: '399',
-    width
+    width, cat: 'tiger'
+
   },
   {
     url: '/items/5.jpeg',
     title: 'Toy 5',
     id: 4,
     priceCents: '499',
-
+    cat: 'lion',
     width,
 
   },
@@ -51,6 +55,7 @@ export const images = [
     priceCents: '599',
     width,
     id: 5,
+    cat: 'tiger'
 
   },
   {
@@ -59,6 +64,7 @@ export const images = [
     priceCents: '699',
     width,
     id: 6,
+    cat: 'bear'
 
   },
   {
@@ -67,6 +73,8 @@ export const images = [
     priceCents: '799',
     width,
     id: 7,
+    cat: 'bear'
+
   },
 
 ];
@@ -162,7 +170,7 @@ const HomePage = () => {
         className='home-bg-container'
       >
       </div>
-      <div className={`${classes.root} items-container`}>
+      <div id='shop' className={`${classes.root} items-container`}>
         {images.map((image) => (
           <ButtonBase
             focusRipple

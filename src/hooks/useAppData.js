@@ -18,10 +18,9 @@ const useAppData = () => {
     if (!(index >= 0))
       setCart(prev => ([...prev, { ...item, count, desc:'It\'s a toy'}]));
     else {
-      const cpy = [...item];
+      const cpy = [...cart];
       cpy[index].count = count;
       setCart(cpy);
-
     }
   };
   const removeCart = (item) => {

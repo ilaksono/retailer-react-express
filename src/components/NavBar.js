@@ -15,8 +15,8 @@ const NavBar = () => {
         </div>
       </Link>
       <div className='nav-logo'>
-        <a>
-          <StorefrontIcon style={{}}/>
+        <a href="#shop">
+          <StorefrontIcon style={{}} />
         </a>
       </div>
       <Link to='/cart'>
@@ -28,6 +28,11 @@ const NavBar = () => {
         <div className='nav-logo'>
           Login
       </div>
+      </Link>
+      <Link to='/admin/addnew'>
+        <div className='nav-logo'>
+          Admin
+        </div>
       </Link>
 
     </nav >

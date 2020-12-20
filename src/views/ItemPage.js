@@ -44,10 +44,7 @@ const ItemPage = () => {
             Add to Cart
           </Button>
         </div>
-
-
       </div>
-
     </div>
   );
 
