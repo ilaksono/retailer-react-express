@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Router, Redirect } from 'react-router-dom';
+import routes from 'routes';
+import NavBar from 'components/NavBar';
+const switchRoutes = (
+  <Switch>
+    {routes.map((prop, key) => {
+      return (
+        <Route
+          path={prop.layout + prop.path}
+          component={prop.component}
+          key={key}
+        />
+      );
+    })}
+    <Redirect from="/" to="/home" />
+  </Switch>
+);
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      {switchRoutes}
     </div>
   );
 }
