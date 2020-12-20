@@ -1,47 +1,54 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import 'styles/HomePage.scss';
 import { Link } from 'react-router-dom';
-
+import AppContext from 'AppContext';
 const width = '20%';
 export const images = [
   {
     url: '/items/1.jpeg',
     id: 0,
     title: 'Toy 1',
+    priceCents: '99',
     width
   },
   {
     url: '/items/2.jpeg',
     id: 1,
     title: 'Toy 2',
+    priceCents: '199',
     width
   },
   {
     url: '/items/3.jpeg',
     title: 'Toy 3',
     id: 2,
+    priceCents: '299',
     width
   },
   {
     url: '/items/4.jpeg',
     title: 'Toy 4',
     id: 3,
+    priceCents: '399',
     width
   },
   {
     url: '/items/5.jpeg',
     title: 'Toy 5',
     id: 4,
+    priceCents: '499',
+
     width,
 
   },
   {
     url: '/items/6.jpeg',
     title: 'Toy 6',
+    priceCents: '599',
     width,
     id: 5,
 
@@ -49,6 +56,7 @@ export const images = [
   {
     url: '/items/7.jpeg',
     title: 'Toy 7',
+    priceCents: '699',
     width,
     id: 6,
 
@@ -56,6 +64,7 @@ export const images = [
   {
     url: '/items/8.jpeg',
     title: 'Toy 8',
+    priceCents: '799',
     width,
     id: 7,
   },
@@ -138,6 +147,10 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePage = () => {
   const classes = useStyles();
+
+  const {
+    clickItemHandle
+  } = useContext(AppContext);
   return (
     <div className='home-layout'>
       <div
@@ -160,7 +173,14 @@ const HomePage = () => {
               width: image.width,
             }}
           >
-            <Link to={`/items/${image.id}`}>
+            <Link to={`/items/${image.id}`}
+              onClick={() => clickItemHandle({
+                url: image.url,
+                name: image.title,
+                priceCents: image.priceCents,
+                id: image.id
+              })}
+            >
               <span
                 className={classes.imageSrc}
                 style={{

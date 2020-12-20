@@ -1,7 +1,6 @@
 import { Switch, Redirect, Route, BrowserRouter as Router } from 'react-router-dom';
 import routes from 'routes';
 import NavBar from 'components/NavBar';
-import {useState} from 'react';
 import 'styles/index.scss';
 const switchRoutes = (
   routes.map((prop, key) => {
@@ -17,7 +16,7 @@ const switchRoutes = (
 
 
 function App() {
-  const [item, setItem] = useState()
+  
 
   return (
     <div className="App">

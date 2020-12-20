@@ -1,0 +1,25 @@
+@import './helpers.scss';
+.item-layout {
+  margin-top: 75px;
+  height: calc(100vh - 100px);
+  @include flexbox(column, flex-start, center);
+  width: 100%;
+
+}
+
+.product-container {
+  @include flexbox(row, space-around, flex-start);
+  width: 100%;
+  margin-top: 25px;
+
+}
+
+.product-dets {
+  width: 350px;
+  text-align: left;
+}
+
+.item-count {
+  width: 50px;
+  text-align: center;
+}

@@ -1,6 +1,7 @@
-import HomePage from 'views/HomePage';
 import HomeIcon from '@material-ui/icons/Home';
-
+import HomePage from 'views/HomePage';
+import ItemPage from 'views/ItemPage';
+import CartPage from 'views/CartPage';
  const routes = [
   {
     path:'/home',
@@ -10,10 +11,16 @@ import HomeIcon from '@material-ui/icons/Home';
   },
   {
     path:'/items',
-    name: 'Home',
+    name: 'Items',
     icon: HomeIcon,
-    component: HomePage
-  }
+    component: ItemPage
+  },
+   {
+     path: '/cart',
+     name: 'Cart',
+     icon: HomeIcon,
+     component: CartPage
+   }
 ]
 
 export default routes;
