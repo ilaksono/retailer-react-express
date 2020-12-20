@@ -1,5 +1,9 @@
 import 'styles/NavBar.scss';
 import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 const NavBar = () => {
 
 
@@ -7,26 +11,26 @@ const NavBar = () => {
     <nav className='nav-container'>
       <Link to='/home'>
         <div className='nav-logo'>
-          Home
-      </div>
+          <HomeIcon />
+        </div>
       </Link>
-      <Link to='/items'>
-        <div className='nav-logo'>
-          Daily
+      <div className='nav-logo'>
+        <a>
+          <StorefrontIcon style={{}}/>
+        </a>
       </div>
-      </Link>
       <Link to='/cart'>
         <div className='nav-logo'>
-          Charts
-      </div>
+          <ShoppingCartIcon /> Cart
+        </div>
       </Link>
       <Link to='/confirm'>
         <div className='nav-logo'>
-          Currency
+          Login
       </div>
       </Link>
 
-    </nav>
+    </nav >
   );
 
 };

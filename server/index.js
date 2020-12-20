@@ -6,3 +6,5 @@ app.use(bodyParser.json());
 
 
 app.listen(8001, () => console.log('listening 8001'))
+
+app.post('/items')
